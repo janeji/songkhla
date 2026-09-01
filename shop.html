@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1.4) Title เป็นคำว่า Food -->
+    <title>Food</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --primary-hover: #e74c3c;
+            --bg-color: #faf7f5;
+            --text-dark: #2c3e50;
+            --nav-bg: #1a252f;
+        }
+
+        /* 1.6) ใส่สีพื้นหลังให้สวยงามและเหมาะสม */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 1.5) รูปภาพหน้าปก Cover ความกว้าง 100% */
+        .cover-container {
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .cover-img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 1.1) เมนูลิงก์เชื่อมโยงกลับไปกลับมา */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 14px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 10px;
+            padding: 8px 22px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary-hover);
+            color: #ffffff;
+        }
+
+        .main-container {
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        .content-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--primary-color);
+        }
+
+        /* 1.9.a) “ข้าวสตูหมูเกียดฟั่ง” กำหนดเป็นขนาดตัวอักษรใหญ่สุด ใส่สีสวยงาม */
+        h1 {
+            font-size: 42px;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* 1.10.b) รูป image1 ใส่ในหน้า shop */
+        .image-wrapper {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .content-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .shop-desc {
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* 1.9.b) ส่วนที่มาลิงก์ไปยังเว็บไซต์ที่ให้ไว้ */
+        .source-container {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 15px;
+            color: #7f8c8d;
+        }
+
+        .source-link {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 4px 12px;
+            background-color: #ebf5fb;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .source-link:hover {
+            background-color: #2980b9;
+            color: #ffffff;
+        }
+
+        /* 1.11) ข้อความส่วนท้าย */
+        footer {
+            background-color: var(--nav-bg);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1.5) รูปภาพหน้าปก Cover (cover.jpg) ความกว้าง 100% -->
+    <div class="cover-container">
+        <img src="cover.jpg" alt="ร้านอาหารในสงขลา" class="cover-img">
+    </div>
+
+    <!-- 1.1) เมนูลิงก์สลับหน้า -->
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="shop.html" class="active">ร้านอาหาร</a>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-card">
+            <!-- 1.9.a) ตัวอักษรใหญ่สุด + สีสวยงาม -->
+            <h1>ข้าวสตูหมูเกียดฟั่ง</h1>
+
+            <!-- 1.10.b) รูป image1 ใส่ในหน้า shop -->
+            <div class="image-wrapper">
+                <img src="image1.jpg" alt="ร้านอาหารในสงขลา" class="content-img">
+            </div>
+
+            <!-- 1.7) ข้อความบรรยายหน้าร้านอาหารตามโจทย์ -->
+            <p class="shop-desc">
+                ถนนนางงาม เมืองเก่าสงขลา นอกจากจะมีอาคารบ้านเรือนสวยงามแล้ว ส้มปอยขอเรียกอีกอย่างว่าเป็นเส้นทางความอร่อยของเมืองสงขลา แต่ละร้านมีประวัติยาวนาน แวะร้านไหนก็อร่อยละมุนลิ้นไปเสียหมด โดยเฉพาะร้านนี้ “เกียดฟั่ง” ที่ถือได้ว่าเป็นตำนานแห่งความอร่อยคู่กับนครในมามากกว่า 80 ปี สตูหมูเกียดฟั่ง เป็นความอร่อยนานาชาติ เป็นจานที่ได้ส่วนผสมทางวัฒนธรรมจาก อังกฤษ อินโดนีเซีย จีน ไทย กลายมาเป็นสตูรสชาติหนึ่งเดียวในไทย น้ำซุปร้อนๆ กึ่งข้น กึ่งใส ได้ความข้นแบบไทยไทยมาจากการผสมกะทิเข้าไป เป็นการประยุกต์ใช้ในภาวะนมและเนยราคาแพง ผสมผสานรสชาติของกระดูกหมูและเครื่องเทศ เลยได้รสชาติแตกต่างจากสตูของเมืองนอก แต่เป็นสตูในแบบไทยไทยที่ยืนหนึ่งในสงขลา คงจะเป็นการฟิวชันของอาหารที่ได้ผลอย่างดีงาม ในชามสตูหมูจะมีทั้งเนื้อหมู ไส้ หมูกรอบ เครื่องใน และเลือด อยากได้ส่วนไหนก็แจ้งได้เลย
+            </p>
+
+            <!-- 1.9.b) ลิงก์ที่มา -->
+            <div class="source-container">
+                ที่มา: <a href="https://onceinlife.co/kiad-fang/" target="_blank" class="source-link">https://onceinlife.co/kiad-fang/</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.11) ข้อความส่วนท้าย -->
+    <footer>
+        © 2026 Food inc. All Rights reserved.
+    </footer>
+
+</body>
+</html>

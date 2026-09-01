@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1.4) Title เป็นคำว่า Food -->
+    <title>Food</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --primary-hover: #e67e22;
+            --bg-color: #f8f9fa;
+            --text-dark: #2c3e50;
+            --nav-bg: #1a252f;
+        }
+
+        /* 1.6) ใส่สีพื้นหลังให้สวยงามและเหมาะสม */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 1.5) รูปภาพหน้าปก Cover ความกว้าง 100% */
+        .cover-container {
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .cover-img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 1.1) เมนูลิงก์เชื่อมโยงกลับไปกลับมา */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 14px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 10px;
+            padding: 8px 22px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary-hover);
+            color: #ffffff;
+        }
+
+        .main-container {
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        .content-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--primary-color);
+        }
+
+        /* 1.8.a) “กินนอนนครใน” กำหนดเป็นขนาดตัวอักษรใหญ่สุด ใส่สีสวยงาม */
+        h1 {
+            font-size: 42px;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* 1.8.c) “ชิมรสจีน ชิมรสมุสลิม ชิมรสชาติท้องทะเล” เป็นตัวหนา */
+        .highlight-bold {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a252f;
+            background-color: #fef5ec;
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        /* 1.10.a) รูป image ในหน้า index */
+        .image-wrapper {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .content-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #16a085;
+            margin-top: 25px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .section-desc {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* 1.8.b) ส่วนที่มาให้ลิงก์ไปยังเว็บไซต์ที่ให้ไว้ */
+        .source-container {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 15px;
+            color: #7f8c8d;
+        }
+
+        .source-link {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 4px 12px;
+            background-color: #ebf5fb;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .source-link:hover {
+            background-color: #2980b9;
+            color: #ffffff;
+        }
+
+        /* 1.11) ข้อความส่วนท้าย */
+        footer {
+            background-color: var(--nav-bg);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1.5) รูปภาพหน้าปก Cover (cover.jpg) ความกว้าง 100% -->
+    <div class="cover-container">
+        <img src="cover.jpg" alt="ร้านอาหารในสงขลา" class="cover-img">
+    </div>
+
+    <!-- 1.1) เมนูลิงก์สลับหน้า -->
+    <nav>
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="shop.html">ร้านอาหาร</a>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-card">
+            <!-- 1.8.a) ตัวอักษรใหญ่สุด + สีสวยงาม -->
+            <h1>กินนอนนครใน</h1>
+
+            <!-- 1.7) ข้อความที่กำหนด -->
+            <p class="intro-text">
+                ทริปลงใต้เรียนรู้สงขลาผ่านการกินอาหาร เรียนรู้เรื่องเมืองที่มีหลากหลายวัฒนธรรม ไม่ใช่แค่อยู่ร่วมกัน แต่ยังมีความผสมผสานกันได้อย่างลงตัว แสดงออกมาเป็นอาหารที่มีความเฉพาะตัว
+            </p>
+
+            <!-- 1.8.c) ตัวหนา -->
+            <div class="highlight-bold">
+                <strong>ชิมรสจีน ชิมรสมุสลิม ชิมรสชาติท้องทะเล</strong>
+            </div>
+
+            <!-- 1.10.a) รูป image ใส่ในหน้า index -->
+            <div class="image-wrapper">
+                <img src="image.jpg" alt="บรรยากาศสงขลา" class="content-img">
+            </div>
+
+            <p class="section-title">ชิมรสจีน</p>
+            <p class="section-desc">
+                สงขลาเป็นเมืองที่คนจีนหลายเชื้อสายอพยพมาตั้งรกรากกันตั้งแต่อดีต บนถนนสายเดียวจะพบอาหารจีนหลากหลายแบบ ทั้งอาหารจีนแต้จิ๋วที่ใช้แต่ของในสงขลาเพื่อทำอาหารเท่านั้น สตูว์สูตรพ่อครัวชาวจีนที่เคยทำงานบนเรือฝรั่ง หรือสังขยาแบบไหหลำ
+            </p>
+
+            <p class="section-title">ชิมรสมุสลิม</p>
+            <p class="section-desc">
+                ตั้งแต่อดีตสงขลาย้ายที่ตั้งของเมืองมาหลายครั้ง และมีชุมชนมุสลิมที่เหนียวแน่นอยู่ร่วมกันในทุกยุคทุกสมัย รวมถึง ‘บ้านบน’ ชุมชนมุสลิมในเขตเมืองสงขลาปัจจุบัน ที่มีวัฒนธรรมของพี่น้องชาวมุสลิม โดยเฉพาะอาหารอย่างโรตี น้ำชา และข้าวมันแกงไก่ ข้าวมันราดด้วยแกงไก่ใส่ออดิบ น้ำพริก และเครื่องประกอบจากทะเลอย่างปลาแห้งและกุ้งหวาน เป็นรสแบบมุสลิมแถบทะเลสาบสงขลา
+            </p>
+
+            <p class="section-title">ชิมรสชาติท้องทะเล</p>
+            <p class="section-desc">
+                อาหารทะเลที่เพิ่งขึ้นมาจากทะเลไม่เกิน 5 ชั่วโมง ไม่ผ่านการแช่น้ำแข็งหรือใช้สารเคมี เป็นวิถีของชาวประมงพื้นบ้านแห่งหมู่บ้านสะกอม อำเภอจะนะ แบบดั้งเดิม รสชาติของท้องทะเลสดๆ จึงอัดแน่นอยู่ในกุ้ง หอย ปู ปลา ที่หามาได้ และยังได้มีโอกาสชิม ‘ข้าวดอกราย’ อาหารที่จะหากินได้เฉพาะหมู่บ้านสะกอมอีกด้วย
+            </p>
+
+            <!-- 1.8.b) ลิงก์ที่มา -->
+            <div class="source-container">
+                ที่มา: <a href="https://readthecloud.com/living/eat-trip/eat-trip-songkla/" target="_blank" class="source-link">https://readthecloud.com/living/eat-trip/eat-trip-songkla/</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1.11) ข้อความส่วนท้าย -->
+    <footer>
+        © 2026 Food inc. All Rights reserved.
+    </footer>
+
+</body>
+</html>
